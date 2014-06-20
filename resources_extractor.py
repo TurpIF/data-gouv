@@ -2,6 +2,12 @@ import requests
 import json
 import logging
 
+def is_valid(res):
+    white_list = ['csv', 'json', 'txt', 'xls', 'xlsx', 'xml', 'csv ods pdf', 'gzip', 'ods', 'shp', 'tsv']
+    if res['format'].lower().strip() in white_list:
+        return True
+    return False
+
 def get_resources(id):
     base_url = 'http://www.data.gouv.fr/api/3/action/package_show?id=%s'
     url = base_url % id
@@ -16,7 +22,9 @@ def get_resources(id):
     if not content['success']:
         raise IOError('Id does not exist')
 
-    resources = content['result']['resources']
+    resources = list(filter(is_valid, content['result']['resources']))
+    for r in resources:
+        r['package_id'] = id
     return resources
 
 if __name__ == '__main__':
@@ -34,9 +42,12 @@ if __name__ == '__main__':
             logging.exception(e)
         else:
             logging.info('Find %d resources for %s' % (len(res), id))
-            for r in res:
-                r['package_id'] = id
             resources.extend(res)
 
     output_filename = './all_resources.json'
+    import os
+    try:
+        os.remove(output_filename)
+    except FileNotFoundError:
+        pass
     json.dump(resources, open(output_filename, 'w'))
