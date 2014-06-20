@@ -44,6 +44,14 @@ if __name__ == '__main__':
             logging.info('Find %d resources for %s' % (len(res), id))
             resources.extend(res)
 
+    # Unify by url
+    logging.info('Find a total of %d resources' % len(resources))
+    res = {}
+    for r in resources:
+        res[r['url']] = r
+    resources = list(res.values())
+    logging.info('Find a total of %d uniq resources' % len(resources))
+
     output_filename = './all_resources.json'
     import os
     try:
