@@ -1,0 +1,3 @@
+/home/vongo/Bureau/HckInter/data-gouv/PolicesEtGendarmes.csv
+/home/vongo/Bureau/HckInter/Gendarmeries.csv
+/home/vongo/Bureau/HckInter/EPCI.csv
