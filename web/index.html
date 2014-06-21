@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="datahack">
+    <head>
+        <title>Data Hack</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <!-- Stylesheet -->
+        <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" media="screen" />
+        <!-- <link rel="stylesheet" type="text/css" href="./css/font&#45;awesome.min.css" media="screen" /> -->
+        <link rel="stylesheet" type="text/css" href="./css/main.css" media="screen" />
+        <!-- Fonts -->
+        <!-- Scripts -->
+        <script src="./js/lib/jquery.min.js"></script>
+        <script src="./js/lib/angular.min.js"></script>
+        <script src="./js/lib/angular-route.min.js"></script>
+        <script src="./js/lib/angular-resource.min.js"></script>
+        <script src="./js/lib/bootstrap.min.js"></script>
+        <script src="./js/main.js"></script>
+        <!-- IE -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    </head>
+    <body >
+    <div id="content">
+        <div class="row-fluid" ng-view>
+          <div ng-controller="MyLittleCtrl">
+            {{ test }}
+          </div>
+        </div>
+    </div>
+    </body>
+</html>
+
+
+
+
