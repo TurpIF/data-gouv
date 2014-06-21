@@ -97,11 +97,12 @@
       m.focus = false,
       m.draggable = false;
       if (d.street)           m.message = d.street;
-      else if (d.zipcode)     m.message = d.zipcode;
       else if (d.city)        m.message = d.city;
+      else if (d.zipcode)     m.message = '' + d.zipcode;
       else if (d.departement) m.message = d.departement;
       else if (d.region)      m.message = d.region;
 
+      console.log(m);
       return m;
     };
 
@@ -194,18 +195,18 @@
               value: d3.sum(t, function(a) { return a.value; }),
             };
 
-            if (by == 'region') {
+            if (by == 'region' && agg_d.region) {
               agg_d.street = undefined;
               agg_d.city = undefined;
               agg_d.zipcode = undefined;
               agg_d.departement = undefined;
             }
-            if (by == 'departement') {
+            if (by == 'departement' && agg_d.departement) {
               agg_d.street = undefined;
               agg_d.city = undefined;
               agg_d.zipcode = undefined;
             }
-            if (by == 'city') {
+            if (by == 'city' && agg_d.city) {
               agg_d.street = undefined;
             }
             agg.push(agg_d);
@@ -218,7 +219,6 @@
       var aggreg_data = $scope.data;
       if ($scope.aggregate_data)
         aggreg_data = aggreg_by($scope.data, aggreg_level(zoom));
-      console.log(aggreg_data);
       $scope.markers = aggreg_data.map(data2marker);
     });
 
