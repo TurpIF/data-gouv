@@ -89,21 +89,44 @@
     },
     ];
 
-    var data2marker = function(d) {
-      var m = {};
-      m.model = d.model;
-      m.lat = d.lat;
-      m.lng = d.lng;
-      m.focus = false,
-      m.draggable = false;
-      if (d.street)           m.message = d.street;
-      else if (d.city)        m.message = d.city;
-      else if (d.zipcode)     m.message = '' + d.zipcode;
-      else if (d.departement) m.message = d.departement;
-      else if (d.region)      m.message = d.region;
+    var datas2markers = function(ds) {
+      var value_max = d3.max(ds, function(d) { return d.value; });
 
-      console.log(m);
-      return m;
+      return ds.map(function(d) {
+        var m = {};
+        m.model = d.model;
+        m.lat = d.lat;
+        m.lng = d.lng;
+        m.focus = false;
+        m.draggable = false;
+        if (d.street)           m.message = d.street;
+        else if (d.city)        m.message = d.city;
+        else if (d.zipcode)     m.message = '' + d.zipcode;
+        else if (d.departement) m.message = d.departement;
+        else if (d.region)      m.message = d.region;
+
+        var font_size = d.value / value_max * 30;
+
+        var type2color = function(t) {
+          return 'black';
+        };
+
+        var type2class = function(t) {
+          return 'glyphicon-home';
+        };
+
+        var color = type2color(d.type);
+        var class_ = type2class(d.type);
+
+        m.icon = {
+          type: 'div',
+             iconSize: [1, 0],
+             html: '<i class="glyphicon marker ' + class_ + '" style="font-size: ' + font_size + 'px; top: -' + font_size / 2 + 'px; left: -' + font_size / 2 + 'px; color: ' + color + '"></i>',
+             popupAnchor: [0, 0],
+        };
+
+        return m;
+      });
     };
 
     $scope.markers = [];
@@ -219,7 +242,7 @@
       var aggreg_data = $scope.data;
       if ($scope.aggregate_data)
         aggreg_data = aggreg_by($scope.data, aggreg_level(zoom));
-      $scope.markers = aggreg_data.map(data2marker);
+      $scope.markers = datas2markers(aggreg_data);
     });
 
     $scope.$on('leafletDirectiveMap.click', function(e, d) {
