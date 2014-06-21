@@ -66,3 +66,7 @@ body {
   /* top: -50%; */
   /* left: -50%; */
 }
+
+.info-box {
+  display: none;
+}

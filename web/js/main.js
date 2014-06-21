@@ -3,7 +3,8 @@
 
   var app = angular.module('datahack', ['ui.bootstrap', 'leaflet-directive']);
 
-  app.controller('MyLittleCtrl', ['$scope', '$interval', function($scope, $interval) {
+  app.controller('MyLittleCtrl', ['$scope', '$interval', '$http',
+    function($scope, $interval, $http) {
     $scope.test = 'coucou';
     $scope.year_min = 1996;
     $scope.year_max = 2015;
@@ -131,6 +132,8 @@
 
     $scope.markers = [];
 
+    $scope.geojson = {};
+
     $scope.google_layers = {
       baselayers: {
         googleRoadmap: {
@@ -240,8 +243,31 @@
       };
 
       var aggreg_data = $scope.data;
+      var level = aggreg_level(zoom);
       if ($scope.aggregate_data)
-        aggreg_data = aggreg_by($scope.data, aggreg_level(zoom));
+        aggreg_data = aggreg_by($scope.data, level);
+
+      var geojson_file = 'departements';
+      var geojson_opacity = 0.4;
+      if (level == 'region')  geojson_file = 'regions';
+      // if (level == 'city')    geojson_opacity = 0.2;
+      $http.get('./data/' + geojson_file + '.geojson').success(function(data, status) {
+        $scope.geojson = {
+          data: data,
+          style: function(d) {
+            console.log(d);
+            return {
+              fillColor: "red",
+              weight: 1,
+              opacity: 1,
+              color: '#666',
+              // dashArray: '3',
+              fillOpacity: geojson_opacity
+            };
+          }
+        };
+      });
+
       $scope.markers = datas2markers(aggreg_data);
     });
 
