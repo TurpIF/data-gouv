@@ -20,8 +20,8 @@
 <entry key="quoteReplacement" type="xstring" value=""/>
 <entry key="sepReplacePattern" type="xstring" value=""/>
 <entry key="ReplSepInStrings" type="xboolean" value="false"/>
-<entry key="writeColHeader" type="xboolean" value="false"/>
-<entry key="writeRowHeader" type="xboolean" value="true"/>
+<entry key="writeColHeader" type="xboolean" value="true"/>
+<entry key="writeRowHeader" type="xboolean" value="false"/>
 <entry key="decimalSeparator" type="xchar" value="."/>
 <entry key="lineEndingMode" type="xstring" value="SYST"/>
 <entry key="filename" type="xstring" value="/home/vongo/Bureau/HckInter/data-gouv/PolicesEtGendarmes.csv"/>
@@ -43,6 +43,6 @@
 <config key="ports"/>
 <config key="filestores">
 <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-<entry key="file_store_id" type="xstring" value="0965d4f5-4db2-4eb2-8d02-3e0038974ef8"/>
+<entry key="file_store_id" type="xstring" value="b5d2e4db-00c3-46f1-9dd8-2cf7216ecdf7"/>
 </config>
 </config>

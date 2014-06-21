@@ -17,6 +17,7 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
 </presentation>
 </folder>
 </info>
@@ -27,9 +28,6 @@
 </editors>
 <views>
 <view id="org.eclipse.ui.console.ConsoleView" partName="Console">
-<viewState/>
-</view>
-<view id="org.knime.workbench.helpview" partName="Node Description">
 <viewState/>
 </view>
 <view id="org.knime.workbench.repository.view.RepositoryView" partName="Node Repository">
@@ -80,7 +78,6 @@
 <view id="org.knime.workbench.repository.view.RepositoryView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
-<view id="org.knime.workbench.helpview"/>
 <view id="org.knime.workbench.ui.favorites"/>
 <fastViewBars/>
 <viewLayoutRec closeable="false" id="org.knime.workbench.repository.view.RepositoryView"/>
@@ -120,11 +117,9 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@7c351cbd" ratio="0.698727" ratioLeft="494" ratioRight="213" relationship="2" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.knime.workbench.helpview" appearance="2" expanded="2">
-<page content="org.knime.workbench.helpview" label="Node Description"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<folder appearance="2" expanded="2">
+<page content="org.knime.workbench.helpview" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@2f1fc00" ratio="0.29937303" ratioLeft="191" ratioRight="447" relationship="4" relative="org.eclipse.ui.internal.ViewStack@56946d74">
@@ -152,6 +147,8 @@
 <editors>
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.knime.workbench.editor.WorkflowEditor" uri="knime://LOCAL/HckInter/workflow.knime"/>
 </editors>
+<item historyLabel="0: HckInter" index="0"/>
+<item historyLabel="0: HckInter" index="0"/>
 <item historyLabel="0: HckInter" index="0"/>
 <item active="true" historyLabel="0: HckInter" index="0"/>
 </navigationHistory>
