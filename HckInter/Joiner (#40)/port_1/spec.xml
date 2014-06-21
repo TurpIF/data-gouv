@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config xmlns="http://www.knime.org/2008/09/XMLConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.knime.org/2008/09/XMLConfig http://www.knime.org/XMLConfig_2008_09.xsd" key="spec.xml">
 <entry key="spec_name" type="xstring" value="default"/>
-<entry key="number_columns" type="xint" value="33"/>
+<entry key="number_columns" type="xint" value="34"/>
 <config key="column_spec_0">
 <entry key="column_name" type="xstring" value="Label"/>
 <config key="element_names">
@@ -803,6 +803,28 @@
 <config key="column_properties"/>
 </config>
 <config key="column_spec_26">
+<entry key="column_name" type="xstring" value="idDepFromCP"/>
+<config key="element_names">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="column_type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+</config>
+<config key="column_domain"/>
+<config key="column_properties"/>
+</config>
+<config key="column_spec_27">
+<entry key="column_name" type="xstring" value="n_dep"/>
+<config key="element_names">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="column_type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+</config>
+<config key="column_domain"/>
+<config key="column_properties"/>
+</config>
+<config key="column_spec_28">
 <entry key="column_name" type="xstring" value="Infractions aux biens 2011"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
@@ -826,7 +848,7 @@
 </config>
 <config key="column_properties"/>
 </config>
-<config key="column_spec_27">
+<config key="column_spec_29">
 <entry key="column_name" type="xstring" value="Atteintes volontaires à l'intégrité physique 2011"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
@@ -850,7 +872,7 @@
 </config>
 <config key="column_properties"/>
 </config>
-<config key="column_spec_28">
+<config key="column_spec_30">
 <entry key="column_name" type="xstring" value="Infractions économiques et financières 2011"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
@@ -874,18 +896,7 @@
 </config>
 <config key="column_properties"/>
 </config>
-<config key="column_spec_29">
-<entry key="column_name" type="xstring" value="i_dep"/>
-<config key="element_names">
-<entry key="array-size" type="xint" value="0"/>
-</config>
-<config key="column_type">
-<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
-</config>
-<config key="column_domain"/>
-<config key="column_properties"/>
-</config>
-<config key="column_spec_30">
+<config key="column_spec_31">
 <entry key="column_name" type="xstring" value="Infractions aux biens 2012"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
@@ -909,7 +920,7 @@
 </config>
 <config key="column_properties"/>
 </config>
-<config key="column_spec_31">
+<config key="column_spec_32">
 <entry key="column_name" type="xstring" value="Atteintes volontaires à l'intégrité physique 2012"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
@@ -933,7 +944,7 @@
 </config>
 <config key="column_properties"/>
 </config>
-<config key="column_spec_32">
+<config key="column_spec_33">
 <entry key="column_name" type="xstring" value="Infractions économiques et financières 2012"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>

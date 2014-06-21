@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config xmlns="http://www.knime.org/2008/09/XMLConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.knime.org/2008/09/XMLConfig http://www.knime.org/XMLConfig_2008_09.xsd" key="spec.xml">
 <entry key="spec_name" type="xstring" value="default"/>
-<entry key="number_columns" type="xint" value="36"/>
+<entry key="number_columns" type="xint" value="37"/>
 <config key="column_spec_0">
 <entry key="column_name" type="xstring" value="Label"/>
 <config key="element_names">
@@ -803,6 +803,28 @@
 <config key="column_properties"/>
 </config>
 <config key="column_spec_26">
+<entry key="column_name" type="xstring" value="idDepFromCP"/>
+<config key="element_names">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="column_type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+</config>
+<config key="column_domain"/>
+<config key="column_properties"/>
+</config>
+<config key="column_spec_27">
+<entry key="column_name" type="xstring" value="n_dep"/>
+<config key="element_names">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="column_type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+</config>
+<config key="column_domain"/>
+<config key="column_properties"/>
+</config>
+<config key="column_spec_28">
 <entry key="column_name" type="xstring" value="Infractions aux biens 2011"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
@@ -814,19 +836,19 @@
 <config key="lower_bound">
 <entry key="datacell" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
 <config key="org.knime.core.data.def.DoubleCell">
-<entry key="DoubleCell" type="xdouble" value="1.0870000102129225"/>
+<entry key="DoubleCell" type="xdouble" value="1.0870000526352408"/>
 </config>
 </config>
 <config key="upper_bound">
 <entry key="datacell" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
 <config key="org.knime.core.data.def.DoubleCell">
-<entry key="DoubleCell" type="xdouble" value="967.0072410653443"/>
+<entry key="DoubleCell" type="xdouble" value="967.0090882108459"/>
 </config>
 </config>
 </config>
 <config key="column_properties"/>
 </config>
-<config key="column_spec_27">
+<config key="column_spec_29">
 <entry key="column_name" type="xstring" value="Atteintes volontaires à l'intégrité physique 2011"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
@@ -838,19 +860,19 @@
 <config key="lower_bound">
 <entry key="datacell" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
 <config key="org.knime.core.data.def.DoubleCell">
-<entry key="DoubleCell" type="xdouble" value="1.088000093416274"/>
+<entry key="DoubleCell" type="xdouble" value="1.0880000210708525"/>
 </config>
 </config>
 <config key="upper_bound">
 <entry key="datacell" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
 <config key="org.knime.core.data.def.DoubleCell">
-<entry key="DoubleCell" type="xdouble" value="975.1565862166132"/>
+<entry key="DoubleCell" type="xdouble" value="975.1560082450715"/>
 </config>
 </config>
 </config>
 <config key="column_properties"/>
 </config>
-<config key="column_spec_28">
+<config key="column_spec_30">
 <entry key="column_name" type="xstring" value="Infractions économiques et financières 2011"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
@@ -862,30 +884,19 @@
 <config key="lower_bound">
 <entry key="datacell" type="xstring" value="org.knime.core.data.def.IntCell"/>
 <config key="org.knime.core.data.def.IntCell">
-<entry key="IntCell" type="xint" value="286"/>
+<entry key="IntCell" type="xint" value="282"/>
 </config>
 </config>
 <config key="upper_bound">
 <entry key="datacell" type="xstring" value="org.knime.core.data.def.IntCell"/>
 <config key="org.knime.core.data.def.IntCell">
-<entry key="IntCell" type="xint" value="888"/>
+<entry key="IntCell" type="xint" value="903"/>
 </config>
 </config>
 </config>
 <config key="column_properties"/>
 </config>
-<config key="column_spec_29">
-<entry key="column_name" type="xstring" value="i_dep"/>
-<config key="element_names">
-<entry key="array-size" type="xint" value="0"/>
-</config>
-<config key="column_type">
-<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
-</config>
-<config key="column_domain"/>
-<config key="column_properties"/>
-</config>
-<config key="column_spec_30">
+<config key="column_spec_31">
 <entry key="column_name" type="xstring" value="Infractions aux biens 2012"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
@@ -897,19 +908,19 @@
 <config key="lower_bound">
 <entry key="datacell" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
 <config key="org.knime.core.data.def.DoubleCell">
-<entry key="DoubleCell" type="xdouble" value="1.1280000169999327"/>
+<entry key="DoubleCell" type="xdouble" value="1.128000004118441"/>
 </config>
 </config>
 <config key="upper_bound">
 <entry key="datacell" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
 <config key="org.knime.core.data.def.DoubleCell">
-<entry key="DoubleCell" type="xdouble" value="5.895305985069349"/>
+<entry key="DoubleCell" type="xdouble" value="5.895335479958104"/>
 </config>
 </config>
 </config>
 <config key="column_properties"/>
 </config>
-<config key="column_spec_31">
+<config key="column_spec_32">
 <entry key="column_name" type="xstring" value="Atteintes volontaires à l'intégrité physique 2012"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
@@ -921,19 +932,19 @@
 <config key="lower_bound">
 <entry key="datacell" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
 <config key="org.knime.core.data.def.DoubleCell">
-<entry key="DoubleCell" type="xdouble" value="1.0750003294487938"/>
+<entry key="DoubleCell" type="xdouble" value="1.075000006899952"/>
 </config>
 </config>
 <config key="upper_bound">
 <entry key="datacell" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
 <config key="org.knime.core.data.def.DoubleCell">
-<entry key="DoubleCell" type="xdouble" value="964.129964388841"/>
+<entry key="DoubleCell" type="xdouble" value="964.1481279694276"/>
 </config>
 </config>
 </config>
 <config key="column_properties"/>
 </config>
-<config key="column_spec_32">
+<config key="column_spec_33">
 <entry key="column_name" type="xstring" value="Infractions économiques et financières 2012"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
@@ -957,7 +968,7 @@
 </config>
 <config key="column_properties"/>
 </config>
-<config key="column_spec_33">
+<config key="column_spec_34">
 <entry key="column_name" type="xstring" value="Infractions aux biens 2010"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
@@ -969,19 +980,19 @@
 <config key="lower_bound">
 <entry key="datacell" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
 <config key="org.knime.core.data.def.DoubleCell">
-<entry key="DoubleCell" type="xdouble" value="1.1340000231066032"/>
+<entry key="DoubleCell" type="xdouble" value="1.1340000658489087"/>
 </config>
 </config>
 <config key="upper_bound">
 <entry key="datacell" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
 <config key="org.knime.core.data.def.DoubleCell">
-<entry key="DoubleCell" type="xdouble" value="725.5374320735282"/>
+<entry key="DoubleCell" type="xdouble" value="725.5388175763615"/>
 </config>
 </config>
 </config>
 <config key="column_properties"/>
 </config>
-<config key="column_spec_34">
+<config key="column_spec_35">
 <entry key="column_name" type="xstring" value="Atteintes volontaires à l'intégrité physique 2010"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
@@ -993,19 +1004,19 @@
 <config key="lower_bound">
 <entry key="datacell" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
 <config key="org.knime.core.data.def.DoubleCell">
-<entry key="DoubleCell" type="xdouble" value="1.0847503735500115"/>
+<entry key="DoubleCell" type="xdouble" value="1.084750027181837"/>
 </config>
 </config>
 <config key="upper_bound">
 <entry key="datacell" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
 <config key="org.knime.core.data.def.DoubleCell">
-<entry key="DoubleCell" type="xdouble" value="972.3999307596702"/>
+<entry key="DoubleCell" type="xdouble" value="972.4040381761605"/>
 </config>
 </config>
 </config>
 <config key="column_properties"/>
 </config>
-<config key="column_spec_35">
+<config key="column_spec_36">
 <entry key="column_name" type="xstring" value="Infractions économiques et financières 2010"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
@@ -1023,7 +1034,7 @@
 <config key="upper_bound">
 <entry key="datacell" type="xstring" value="org.knime.core.data.def.IntCell"/>
 <config key="org.knime.core.data.def.IntCell">
-<entry key="IntCell" type="xint" value="824"/>
+<entry key="IntCell" type="xint" value="851"/>
 </config>
 </config>
 </config>

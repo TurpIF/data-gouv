@@ -20,12 +20,12 @@
 <entry key="quoteReplacement" type="xstring" value=""/>
 <entry key="sepReplacePattern" type="xstring" value=""/>
 <entry key="ReplSepInStrings" type="xboolean" value="false"/>
-<entry key="writeColHeader" type="xboolean" value="false"/>
+<entry key="writeColHeader" type="xboolean" value="true"/>
 <entry key="writeRowHeader" type="xboolean" value="false"/>
 <entry key="decimalSeparator" type="xchar" value="."/>
 <entry key="lineEndingMode" type="xstring" value="SYST"/>
 <entry key="filename" type="xstring" value="/home/vongo/Bureau/HckInter/data-gouv/MarechaussauxEtVillesEtCriminels.csv"/>
-<entry key="fileOverwritePolicy" type="xstring" value="Abort"/>
+<entry key="fileOverwritePolicy" type="xstring" value="Overwrite"/>
 <entry key="skipWriteColHeaderOnAppend" type="xboolean" value="false"/>
 <entry key="commentBegin" type="xstring" value=""/>
 <entry key="commentEnd" type="xstring" value=""/>
@@ -43,6 +43,6 @@
 <config key="ports"/>
 <config key="filestores">
 <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-<entry key="file_store_id" type="xstring" value="8a3ed144-38b4-485f-82c4-bee1691535e3"/>
+<entry key="file_store_id" type="xstring" value="ed4ea17c-4a85-4f48-9953-922a120f6e1d"/>
 </config>
 </config>
