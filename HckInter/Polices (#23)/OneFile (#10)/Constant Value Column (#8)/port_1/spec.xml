@@ -993,7 +993,7 @@
 <config key="column_properties"/>
 </config>
 <config key="column_spec_6">
-<entry key="column_name" type="xstring" value="Longitude"/>
+<entry key="column_name" type="xstring" value="Latitude"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
 </config>
@@ -1017,7 +1017,7 @@
 <config key="column_properties"/>
 </config>
 <config key="column_spec_7">
-<entry key="column_name" type="xstring" value="Latitude"/>
+<entry key="column_name" type="xstring" value="Longitude"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
 </config>
