@@ -172,7 +172,8 @@
       }
     };
 
-    $http.get('./data/polices_gendarmes.json').success(function(data, status) {
+    $http.get('./data/convert.json').success(function(data, status) {
+      console.log('coucou');
       $scope.data = data.map(function(d) {
         return {
           lat: d.latitude,
@@ -194,7 +195,7 @@
         if (d.region == 'GUYANNE') return false;
         return true;
       });
-    });
+    }).error(function(s) { console.log('cou'); });
 
     $scope.$on('leafletDirectiveMap.zoomend', function(e, d) {
       // console.log('zoom', e, d);
@@ -277,6 +278,7 @@
       var level = aggreg_level(zoom);
       if ($scope.aggregate_data)
         aggreg_data = aggreg_by($scope.data, level);
+      console.log($scope.data);
       console.log(aggreg_data);
 
       var geojson_file = 'departements';
