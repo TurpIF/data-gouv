@@ -45,12 +45,12 @@
 </config>
 <config key="x">
 <entry key="old_column_name" type="xstring" value="x"/>
-<entry key="new_column_name" type="xstring" value="Longitude"/>
+<entry key="new_column_name" type="xstring" value="Latitude"/>
 <entry key="new_column_type" type="xint" value="0"/>
 </config>
 <config key="y">
 <entry key="old_column_name" type="xstring" value="y"/>
-<entry key="new_column_name" type="xstring" value="Latitude"/>
+<entry key="new_column_name" type="xstring" value="Longitude"/>
 <entry key="new_column_type" type="xint" value="0"/>
 </config>
 <config key="Type">
@@ -76,6 +76,6 @@
 </config>
 <config key="filestores">
 <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-<entry key="file_store_id" type="xstring" value="d8d4ee76-0e0c-4edc-94b1-fb130578cfe4"/>
+<entry key="file_store_id" type="xstring" value="ce851015-b3b4-4b21-ab8c-20e7a44e3e56"/>
 </config>
 </config>

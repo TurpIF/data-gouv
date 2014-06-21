@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config xmlns="http://www.knime.org/2008/09/XMLConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.knime.org/2008/09/XMLConfig http://www.knime.org/XMLConfig_2008_09.xsd" key="spec.xml">
 <entry key="spec_name" type="xstring" value="default"/>
-<entry key="number_columns" type="xint" value="28"/>
+<entry key="number_columns" type="xint" value="26"/>
 <config key="column_spec_0">
 <entry key="column_name" type="xstring" value="Label"/>
 <config key="element_names">
@@ -648,28 +648,6 @@
 <config key="column_properties"/>
 </config>
 <config key="column_spec_19">
-<entry key="column_name" type="xstring" value="geo_point_2d"/>
-<config key="element_names">
-<entry key="array-size" type="xint" value="0"/>
-</config>
-<config key="column_type">
-<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
-</config>
-<config key="column_domain"/>
-<config key="column_properties"/>
-</config>
-<config key="column_spec_20">
-<entry key="column_name" type="xstring" value="geo_shape"/>
-<config key="element_names">
-<entry key="array-size" type="xint" value="0"/>
-</config>
-<config key="column_type">
-<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
-</config>
-<config key="column_domain"/>
-<config key="column_properties"/>
-</config>
-<config key="column_spec_21">
 <entry key="column_name" type="xstring" value="id_geofla"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
@@ -693,7 +671,7 @@
 </config>
 <config key="column_properties"/>
 </config>
-<config key="column_spec_22">
+<config key="column_spec_20">
 <entry key="column_name" type="xstring" value="code_comm"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
@@ -717,7 +695,7 @@
 </config>
 <config key="column_properties"/>
 </config>
-<config key="column_spec_23">
+<config key="column_spec_21">
 <entry key="column_name" type="xstring" value="code_cant"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
@@ -741,7 +719,7 @@
 </config>
 <config key="column_properties"/>
 </config>
-<config key="column_spec_24">
+<config key="column_spec_22">
 <entry key="column_name" type="xstring" value="code_arr"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
@@ -765,7 +743,7 @@
 </config>
 <config key="column_properties"/>
 </config>
-<config key="column_spec_25">
+<config key="column_spec_23">
 <entry key="column_name" type="xstring" value="code_dept"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
@@ -776,7 +754,7 @@
 <config key="column_domain"/>
 <config key="column_properties"/>
 </config>
-<config key="column_spec_26">
+<config key="column_spec_24">
 <entry key="column_name" type="xstring" value="code_reg"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
@@ -800,7 +778,7 @@
 </config>
 <config key="column_properties"/>
 </config>
-<config key="column_spec_27">
+<config key="column_spec_25">
 <entry key="column_name" type="xstring" value="nbMarechaussaux"/>
 <config key="element_names">
 <entry key="array-size" type="xint" value="0"/>
