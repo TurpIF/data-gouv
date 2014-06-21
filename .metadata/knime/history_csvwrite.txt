@@ -1,3 +1,4 @@
+/home/vongo/Bureau/HckInter/data-gouv/MarechaussauxEtVillesEtCriminelsLight.csv
 /home/vongo/Bureau/HckInter/data-gouv/MarechaussauxEtVillesEtCriminels.csv
 /home/vongo/Bureau/HckInter/data-gouv/PolicesEtGendarmesEtVilles.csv
 /home/vongo/Bureau/HckInter/data-gouv/PolicesEtGendarmes.csv
