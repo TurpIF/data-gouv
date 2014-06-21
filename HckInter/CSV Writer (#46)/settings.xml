@@ -24,7 +24,7 @@
 <entry key="writeRowHeader" type="xboolean" value="false"/>
 <entry key="decimalSeparator" type="xchar" value="."/>
 <entry key="lineEndingMode" type="xstring" value="SYST"/>
-<entry key="filename" type="xstring" value="/home/vongo/Bureau/HckInter/data-gouv/MarechaussauxEtVillesEtCriminels.csv"/>
+<entry key="filename" type="xstring" value="/home/vongo/Bureau/HckInter/data-gouv/MarechaussauxEtVillesEtCriminelsLight.csv"/>
 <entry key="fileOverwritePolicy" type="xstring" value="Overwrite"/>
 <entry key="skipWriteColHeaderOnAppend" type="xboolean" value="false"/>
 <entry key="commentBegin" type="xstring" value=""/>
@@ -43,6 +43,6 @@
 <config key="ports"/>
 <config key="filestores">
 <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-<entry key="file_store_id" type="xstring" value="03cf7ae7-aed7-4d1f-98c2-6d6eed1c5ad0"/>
+<entry key="file_store_id" type="xstring" value="a216ecb6-b146-4677-bffe-c42e953f8230"/>
 </config>
 </config>
