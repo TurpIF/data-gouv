@@ -14,7 +14,7 @@
 <config key="model">
 <entry key="scriptImports" type="xstring" value="// Your custom imports:%%00010"/>
 <entry key="scriptFields" type="xstring" value="// Your custom variables:%%00010"/>
-<entry key="scriptBody" type="xstring" value="// Enter your code here:%%00010int population = c_population == null ? (Math.random()*5)+1:c_population;%%00010%%00009%%00010out_Infractionsauxbiens2011 = (Double) c_Infractionsauxbiens2011 + (Math.random() * 0.5 * population/700000) * c_Infractionsauxbiens2011;%%00010out_Atteintesvolontaires2011 = (Double) c_Atteintesvolontaires2011 + (Math.random() * 0.5 * population/700000) * c_Atteintesvolontaires2011;%%00010out_InfractionsEco2011 = c_InfractionsEco2011 + (Math.random() * 0.5 * population/700000) * c_InfractionsEco2011;%%00010%%00010out_Infractionsauxbiens2012 = (Double) c_Infractionsauxbiens2012;%%00010out_Atteintesvolontaires2012 = (Double) c_Atteintesvolontaires2012;%%00010out_InfractionsEco2012 = c_InfractionsEco2012;%%00010%%00010out_Infractionsauxbiens2010 = Math.random()%%00010out_Atteintesvolontaires2010 = %%00010out_InfractionsEco2010 = %%00010%%00010%%00010"/>
+<entry key="scriptBody" type="xstring" value="// Enter your code here:%%00010Double population = c_population == null ? ((Math.random()*5)+1):c_population;%%00010%%00009%%00010out_Infractionsauxbiens2011 = c_Infractionsauxbiens2011 + (Math.random() * 0.5 * population/700000) * c_Infractionsauxbiens2011;%%00010out_Atteintesvolontaires2011 = c_Atteintesvolontaires2011 + (Math.random() * 0.5 * population/700000) * c_Atteintesvolontaires2011;%%00010out_InfractionsEco2011 = c_InfractionsEco2011 + (int)(Math.random() * 0.5 * population/700000) * c_InfractionsEco2011;%%00010%%00010out_Infractionsauxbiens2012 = c_Infractionsauxbiens2012 + (Math.random() * 0.5 * population/700000) * c_Infractionsauxbiens2012;%%00010out_Atteintesvolontaires2012 = c_Atteintesvolontaires2012 + (Math.random() * 0.5 * population/700000) * c_Atteintesvolontaires2012;%%00010out_InfractionsEco2012 = c_InfractionsEco2012 + (int)(Math.random() * 0.5 * population/700000) * c_InfractionsEco2012;%%00010%%00010out_Infractionsauxbiens2010 = (out_Infractionsauxbiens2012 - out_Infractionsauxbiens2011)*(0.25)-1/2*Math.random() + out_Infractionsauxbiens2011;%%00010out_Atteintesvolontaires2010 = (out_Atteintesvolontaires2012 - out_Atteintesvolontaires2011)*(0.25)-1/2*Math.random() + out_Atteintesvolontaires2011;%%00010out_InfractionsEco2010 = (int)((out_InfractionsEco2012 - out_InfractionsEco2011)*(0.25)-1/2*Math.random() + out_InfractionsEco2011);%%00010%%00010"/>
 <config key="jarFiles">
 <entry key="array-size" type="xint" value="0"/>
 </config>
@@ -63,9 +63,9 @@
 <config key="4">
 <entry key="Name" type="xstring" value="Atteintes volontaires à l'intégrité physique 2011"/>
 <entry key="JavaName" type="xstring" value="out_Atteintesvolontaires2011"/>
-<entry key="JavaType" type="xstring" value="java.lang.Integer"/>
+<entry key="JavaType" type="xstring" value="java.lang.Double"/>
 <config key="Type">
-<entry key="cell_class" type="xstring" value="org.knime.core.data.def.IntCell"/>
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
 <entry key="is_null" type="xboolean" value="false"/>
 </config>
 <entry key="replaceExisting" type="xboolean" value="true"/>
@@ -119,18 +119,18 @@
 <config key="0">
 <entry key="Name" type="xstring" value="Infractions aux biens 2011"/>
 <entry key="JavaName" type="xstring" value="c_Infractionsauxbiens2011"/>
-<entry key="JavaType" type="xstring" value="java.lang.String"/>
+<entry key="JavaType" type="xstring" value="java.lang.Double"/>
 <config key="Type">
-<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
 <entry key="is_null" type="xboolean" value="false"/>
 </config>
 </config>
 <config key="1">
 <entry key="Name" type="xstring" value="Atteintes volontaires à l'intégrité physique 2011"/>
 <entry key="JavaName" type="xstring" value="c_Atteintesvolontaires2011"/>
-<entry key="JavaType" type="xstring" value="java.lang.String"/>
+<entry key="JavaType" type="xstring" value="java.lang.Double"/>
 <config key="Type">
-<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
 <entry key="is_null" type="xboolean" value="false"/>
 </config>
 </config>
@@ -146,18 +146,18 @@
 <config key="3">
 <entry key="Name" type="xstring" value="Infractions aux biens 2012"/>
 <entry key="JavaName" type="xstring" value="c_Infractionsauxbiens2012"/>
-<entry key="JavaType" type="xstring" value="java.lang.String"/>
+<entry key="JavaType" type="xstring" value="java.lang.Double"/>
 <config key="Type">
-<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
 <entry key="is_null" type="xboolean" value="false"/>
 </config>
 </config>
 <config key="4">
 <entry key="Name" type="xstring" value="Atteintes volontaires à l'intégrité physique 2012"/>
 <entry key="JavaName" type="xstring" value="c_Atteintesvolontaires2012"/>
-<entry key="JavaType" type="xstring" value="java.lang.String"/>
+<entry key="JavaType" type="xstring" value="java.lang.Double"/>
 <config key="Type">
-<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
 <entry key="is_null" type="xboolean" value="false"/>
 </config>
 </config>
@@ -188,22 +188,21 @@
 <entry key="runOnExecute" type="xboolean" value="false"/>
 </config>
 <entry key="customDescription" type="xstring" isnull="true" value=""/>
-<entry key="state" type="xstring" value="IDLE"/>
-<config key="nodecontainer_message">
-<entry key="type" type="xstring" value="WARNING"/>
-<entry key="message" type="xstring" value="Compile with errors:%%00010Error: Syntax error, insert &quot;;&quot; to complete Statement%%00010Error: Syntax error on token &quot;=&quot;, ; expected%%00010"/>
-</config>
+<entry key="state" type="xstring" value="EXECUTED"/>
 <entry key="name" type="xstring" value="Java Snippet"/>
-<entry key="hasContent" type="xboolean" value="false"/>
+<entry key="hasContent" type="xboolean" value="true"/>
 <entry key="isInactive" type="xboolean" value="false"/>
 <config key="ports">
 <config key="port_1">
 <entry key="index" type="xint" value="1"/>
-<entry key="port_dir_location" type="xstring" isnull="true" value=""/>
+<entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
+<entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
+<entry key="port_object_summary" type="xstring" value="Rows: 8572, Cols: 36"/>
+<entry key="port_dir_location" type="xstring" value="port_1"/>
 </config>
 </config>
 <config key="filestores">
 <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-<entry key="file_store_id" type="xstring" isnull="true" value=""/>
+<entry key="file_store_id" type="xstring" value="dcadd23b-d1a9-4516-b0ba-96acf1aff2fb"/>
 </config>
 </config>
