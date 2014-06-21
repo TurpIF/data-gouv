@@ -7,6 +7,7 @@
         <!-- Stylesheet -->
         <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" media="screen" />
         <!-- <link rel="stylesheet" type="text/css" href="./css/font&#45;awesome.min.css" media="screen" /> -->
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css">
         <link rel="stylesheet" type="text/css" href="./css/main.css" media="screen" />
         <!-- Fonts -->
         <!-- Scripts -->
@@ -15,15 +16,53 @@
         <script src="./js/lib/angular-route.min.js"></script>
         <script src="./js/lib/angular-resource.min.js"></script>
         <script src="./js/lib/bootstrap.min.js"></script>
+        <script src="./js/lib/angular-animate.min.js"></script>
+        <script src="./js/lib/ui-bootstrap-tpls-0.11.0.min.js"></script>
+        <script src="./js/lib/d3.v3.min.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry,visualization"></script>
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+        <script src="./js/lib/angular-leaflet-directive.min.js"></script>
+        <script src="./js/lib/Google.js"></script>
         <script src="./js/main.js"></script>
         <!-- IE -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     </head>
     <body >
     <div id="content">
-        <div class="row-fluid" ng-view>
+      <div class="container-fluid" ng-view>
           <div ng-controller="MyLittleCtrl">
-            {{ test }}
+            <div class="row">
+              <div class="col-md-9">
+                <div class="box time-box">
+                  <div class="time-wrapper">
+                    <button role="button" class="btn btn-default btn-lg time-btn" ng-click="togglePlay()">
+                      <i class="glyphicon" ng-class="{'glyphicon-play': !timeline_playing, 'glyphicon-pause': timeline_playing}"></i>
+                    </button>
+                    <progressbar class="time-progressbar" ng-class="{'progress-striped': timeline_playing, 'active': timeline_playing}" value="timeline_value">
+                      {{ timeline_label}}
+                    </progressbar>
+                  </div>
+                </div>
+                <div class="box map-box">
+                  <leaflet class="map" geojson="geojson" markers="markers" center="center" event-broadcast="eventsMap"></leaflet>
+                  <!-- <leaflet class="map" geojson="geojson" markers="markers" layers="google_layers" center="center" event&#45;broadcast="eventsMap"></leaflet> -->
+                </div>
+                <div class="box graph-box">
+                  <h1>Courbes</h1>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="box info-box">
+                  <h1>Info générales</h1>
+                </div>
+                <div class="box histo-box">
+                  <h1>Histogramme des délits</h1>
+                </div>
+                <div class="box histo-box">
+                  <h1>Histogramme des forces de l'ordre</h1>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
     </div>
