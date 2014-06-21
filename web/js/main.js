@@ -43,52 +43,53 @@
       zoom: 6
     };
 
-    $scope.data = [
-    {
-      lat: 47.0835,
-      lng: 2.4,
-      street: '12 rue des Brocolies',
-      city: 'Metz',
-      departement: 'Moselle',
-      region: 'Rhône-Alpes',
-      zipcode: 55000,
-      type: 'A',
-      value: 42,
-    },
-    {
-      lat: 47.4937,
-      lng: 2.4,
-      street: '13 rue des Brocolies',
-      city: 'Metz',
-      departement: 'Moselle',
-      region: 'Lorraine',
-      zipcode: 55000,
-      type: 'A',
-      value: 42,
-    },
-    {
-      lat: 47.2539,
-      lng: 2.6,
-      street: '14 rue des Brocolies',
-      city: 'Metz',
-      departement: 'Moselle',
-      region: 'Lorraine',
-      zipcode: 55000,
-      type: 'A',
-      value: 42,
-    },
-    {
-      lat: 47.6841,
-      lng: 2.8,
-      street: '15 rue des Brocolies',
-      city: 'Metz',
-      departement: 'Moselle',
-      region: 'Lorraine',
-      zipcode: 55000,
-      type: 'A',
-      value: 42,
-    },
-    ];
+    $scope.data = [];
+    // $scope.data = [
+    // {
+    //   lat: 47.0835,
+    //   lng: 2.4,
+    //   street: '12 rue des Brocolies',
+    //   city: 'Metz',
+    //   departement: 'Moselle',
+    //   region: 'Rhône-Alpes',
+    //   zipcode: 55000,
+    //   type: 'A',
+    //   value: 42,
+    // },
+    // {
+    //   lat: 47.4937,
+    //   lng: 2.4,
+    //   street: '13 rue des Brocolies',
+    //   city: 'Metz',
+    //   departement: 'Moselle',
+    //   region: 'Lorraine',
+    //   zipcode: 55000,
+    //   type: 'A',
+    //   value: 42,
+    // },
+    // {
+    //   lat: 47.2539,
+    //   lng: 2.6,
+    //   street: '14 rue des Brocolies',
+    //   city: 'Metz',
+    //   departement: 'Moselle',
+    //   region: 'Lorraine',
+    //   zipcode: 55000,
+    //   type: 'A',
+    //   value: 42,
+    // },
+    // {
+    //   lat: 47.6841,
+    //   lng: 2.8,
+    //   street: '15 rue des Brocolies',
+    //   city: 'Metz',
+    //   departement: 'Moselle',
+    //   region: 'Lorraine',
+    //   zipcode: 55000,
+    //   type: 'A',
+    //   value: 42,
+    // },
+    // ];
 
     var datas2markers = function(ds) {
       var value_max = d3.max(ds, function(d) { return d.value; });
@@ -106,10 +107,14 @@
         else if (d.departement) m.message = d.departement;
         else if (d.region)      m.message = d.region;
 
-        var font_size = d.value / value_max * 30;
+        var font_size = Math.log(d.value / value_max + 1) * 42 * 1.6;
 
         var type2color = function(t) {
-          return 'black';
+          if (t == 'Gendarmerie')       return '#2b468d';
+          if (t == 'Police Municipale') return '#7db7fd';
+          if (t == 'Autre')             return '#304568';
+          console.log(t);
+          return 'red';
         };
 
         var type2class = function(t) {
@@ -121,7 +126,7 @@
 
         m.icon = {
           type: 'div',
-             iconSize: [1, 0],
+             iconSize: [1, 1],
              html: '<i class="glyphicon marker ' + class_ + '" style="font-size: ' + font_size + 'px; top: -' + font_size / 2 + 'px; left: -' + font_size / 2 + 'px; color: ' + color + '"></i>',
              popupAnchor: [0, 0],
         };
@@ -167,20 +172,46 @@
       }
     };
 
+    $http.get('./data/polices_gendarmes.json').success(function(data, status) {
+      $scope.data = data.map(function(d) {
+        return {
+          lat: d.latitude,
+          lng: d.longitude,
+          street: d.adresse,
+          city: d.ville,
+          departement: d.nom_dept,
+          region: d.nom_region,
+          zipcode: d.postal_code,
+          type: d.type,
+          name: d.label,
+          value: d.nbmarechaussaux,
+          model: d,
+        };
+      }).filter(function(d) {
+        if (d.region == 'REUNION') return false;
+        if (d.region == 'MARTINIQUE') return false;
+        if (d.region == 'GUADELOUPE') return false;
+        if (d.region == 'GUYANNE') return false;
+        return true;
+      });
+    });
+
     $scope.$on('leafletDirectiveMap.zoomend', function(e, d) {
       // console.log('zoom', e, d);
       var zoom = d.leafletEvent.target._zoom;
       // console.log(zoom);
 
       var aggreg_level = function(zoom) {
-        if (zoom <= 6)  return 'region';
-        if (zoom <= 7)  return 'departement';
+        if (zoom <= 7)  return 'region';
+        if (zoom <= 8)  return 'departement';
+        return 'departement';
         if (zoom <= 10) return 'city';
         if (zoom <= 11) return undefined;
       };
 
       var aggreg_by = function(d, by) {
         if (!by)  return d;
+        if (by == 'city') return d;
 
         var sortBy = function(ls, by) {
           var sorted = {};
@@ -218,7 +249,7 @@
               region: t[0].region,
               zipcode: t[0].zipcode,
               type: t[0].type,
-              value: d3.sum(t, function(a) { return a.value; }),
+              value: d3.median(t, function(a) { return a.value; }),
             };
 
             if (by == 'region' && agg_d.region) {
@@ -238,7 +269,7 @@
             agg.push(agg_d);
           }
         }
-        agg.push.apply(agg, sorted.not_available);
+        // agg.push.apply(agg, sorted.not_available);
         return agg;
       };
 
@@ -246,16 +277,16 @@
       var level = aggreg_level(zoom);
       if ($scope.aggregate_data)
         aggreg_data = aggreg_by($scope.data, level);
+      console.log(aggreg_data);
 
       var geojson_file = 'departements';
-      var geojson_opacity = 0.4;
+      var geojson_opacity = 0.0;
       if (level == 'region')  geojson_file = 'regions';
       // if (level == 'city')    geojson_opacity = 0.2;
       $http.get('./data/' + geojson_file + '.geojson').success(function(data, status) {
         $scope.geojson = {
           data: data,
           style: function(d) {
-            console.log(d);
             return {
               fillColor: "red",
               weight: 1,
@@ -267,6 +298,14 @@
           }
         };
       });
+
+      if ($scope.aggregate_data) {
+        aggreg_data = aggreg_data.filter(function(d) {
+          if (!(level in d) || !d[level])
+            return false;
+          return true;
+        });
+      }
 
       $scope.markers = datas2markers(aggreg_data);
     });
