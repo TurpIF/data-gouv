@@ -18,6 +18,7 @@ body {
 }
 
 .time-box {
+  display: none;
 }
 
 .time-box .time-wrapper {
@@ -51,7 +52,7 @@ body {
 }
 
 .map-box {
-  height: 600px;
+  height: 780px;
 }
 
 .map-box .map {

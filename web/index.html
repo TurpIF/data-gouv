@@ -6,7 +6,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <!-- Stylesheet -->
         <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" media="screen" />
-        <!-- <link rel="stylesheet" type="text/css" href="./css/font&#45;awesome.min.css" media="screen" /> -->
+        <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css" media="screen" />
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css">
         <link rel="stylesheet" type="text/css" href="./css/main.css" media="screen" />
         <!-- Fonts -->
@@ -32,7 +33,7 @@
       <div class="container-fluid" ng-view>
           <div ng-controller="MyLittleCtrl">
             <div class="row">
-              <div class="col-md-9">
+              <div class="col-md-12">
                 <div class="box time-box">
                   <div class="time-wrapper">
                     <button role="button" class="btn btn-default btn-lg time-btn" ng-click="togglePlay()">
@@ -44,24 +45,24 @@
                   </div>
                 </div>
                 <div class="box map-box">
-                  <!-- <leaflet class="map" geojson="geojson" markers="markers" center="center" event&#45;broadcast="eventsMap"></leaflet> -->
-                  <leaflet class="map" geojson="geojson" markers="markers" layers="google_layers" center="center" event-broadcast="eventsMap"></leaflet>
+                  <leaflet class="map" geojson="geojson" markers="markers" center="center" event-broadcast="eventsMap"></leaflet>
+                  <!-- <leaflet class="map" geojson="geojson" markers="markers" layers="google_layers" center="center" event&#45;broadcast="eventsMap"></leaflet> -->
                 </div>
-                <div class="box graph-box">
-                  <h1>Courbes</h1>
-                </div>
+                <!-- <div class="box graph&#45;box"> -->
+                <!--   <h1>Courbes</h1> -->
+                <!-- </div> -->
               </div>
-              <div class="col-md-3">
-                <div class="box info-box">
-                  <h1>Info générales</h1>
-                </div>
-                <div class="box histo-box">
-                  <h1>Histogramme des délits</h1>
-                </div>
-                <div class="box histo-box">
-                  <h1>Histogramme des forces de l'ordre</h1>
-                </div>
-              </div>
+              <!-- <div class="col&#45;md&#45;3"> -->
+              <!--   <div class="box info&#45;box"> -->
+              <!--     <h1>Info générales</h1> -->
+              <!--   </div> -->
+              <!--   <div class="box histo&#45;box"> -->
+              <!--     <h1>Histogramme des délits</h1> -->
+              <!--   </div> -->
+              <!--   <div class="box histo&#45;box"> -->
+              <!--     <h1>Histogramme des forces de l'ordre</h1> -->
+              <!--   </div> -->
+              <!-- </div> -->
             </div>
           </div>
         </div>

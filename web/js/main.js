@@ -107,7 +107,7 @@
         else if (d.departement) m.message = d.departement;
         else if (d.region)      m.message = d.region;
 
-        var font_size = Math.log(d.value / value_max + 1) * 42 * 1.6;
+        var font_size = d.value / value_max * 42 * 1.6;
 
         var type2color = function(t) {
           if (t == 'Gendarmerie')       return '#2b468d';
@@ -118,7 +118,7 @@
         };
 
         var type2class = function(t) {
-          return 'glyphicon-home';
+          return 'fa-circle';
         };
 
         var color = type2color(d.type);
@@ -127,7 +127,7 @@
         m.icon = {
           type: 'div',
              iconSize: [1, 1],
-             html: '<i class="glyphicon marker ' + class_ + '" style="font-size: ' + font_size + 'px; top: -' + font_size / 2 + 'px; left: -' + font_size / 2 + 'px; color: ' + color + '"></i>',
+             html: '<i class="fa marker ' + class_ + '" style="font-size: ' + font_size + 'px; top: -' + font_size / 2 + 'px; left: -' + font_size / 2 + 'px; color: ' + color + '"></i>',
              popupAnchor: [0, 0],
         };
 
@@ -161,7 +161,7 @@
 
     $scope.defaults = {
       tileLayer: "http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png",
-      maxZoom: 14,
+      maxZoom: 12,
       scrollWheelZoom: true
     };
 
@@ -172,9 +172,32 @@
       }
     };
 
+    $scope.geojson_depart = {};
+    $scope.geojson_region = {};
+
+    var geojson_opacity = 0.0;
+    $scope.infrac_region = {};
+    $scope.infrac_depart = {};
+
     $http.get('./data/convert.json').success(function(data, status) {
-      console.log('coucou');
-      $scope.data = data.map(function(d) {
+      $scope.data = data.filter(function(d) {
+        if (d.nom_region == 'REUNION') return false;
+        if (d.nom_region == 'MARTINIQUE') return false;
+        if (d.nom_region == 'GUADELOUPE') return false;
+        if (d.nom_region == 'GUYANNE') return false;
+        return true;
+      }).map(function(d) {
+        if (d.nom_region) {
+          var v = d['Infractions aux biens 2011'] + d['Atteintes volontaires à l\'intégrité physique 2011'] + d['Infractions économiques et financières 2011'];
+          if (!(d.nom_region in $scope.infrac_region)) {
+            $scope.infrac_region[d.nom_region] = v;
+          }
+          else {
+            $scope.infrac_region[d.nom_region] += v;
+          }
+        }
+
+
         return {
           lat: d.latitude,
           lng: d.longitude,
@@ -188,14 +211,42 @@
           value: d.nbmarechaussaux,
           model: d,
         };
-      }).filter(function(d) {
-        if (d.region == 'REUNION') return false;
-        if (d.region == 'MARTINIQUE') return false;
-        if (d.region == 'GUADELOUPE') return false;
-        if (d.region == 'GUYANNE') return false;
-        return true;
       });
-    }).error(function(s) { console.log('cou'); });
+
+        $http.get('./data/departements.geojson').success(function(data, status) {
+          $scope.geojson_depart = {
+            data: data,
+            style: function(d) {
+              return {
+                fillColor: "red",
+                weight: 1,
+                opacity: 1,
+                color: '#666',
+                // dashArray: '3',
+                fillOpacity: geojson_opacity
+              };
+            }
+          };
+        });
+
+        $http.get('./data/regions.geojson').success(function(data, status) {
+          $scope.geojson_region = {
+            data: data,
+            style: function(d) {
+              console.log('region', d);
+              return {
+                fillColor: "red",
+                weight: 1,
+                opacity: 1,
+                color: '#666',
+                // dashArray: '3',
+                fillOpacity: geojson_opacity
+              };
+            }
+          };
+        });
+
+    }).error(function(s) { console.log('error'); });
 
     $scope.$on('leafletDirectiveMap.zoomend', function(e, d) {
       // console.log('zoom', e, d);
@@ -203,6 +254,7 @@
       // console.log(zoom);
 
       var aggreg_level = function(zoom) {
+        return 'departement';
         if (zoom <= 7)  return 'region';
         if (zoom <= 8)  return 'departement';
         return 'departement';
@@ -281,25 +333,8 @@
       console.log($scope.data);
       console.log(aggreg_data);
 
-      var geojson_file = 'departements';
-      var geojson_opacity = 0.0;
-      if (level == 'region')  geojson_file = 'regions';
-      // if (level == 'city')    geojson_opacity = 0.2;
-      $http.get('./data/' + geojson_file + '.geojson').success(function(data, status) {
-        $scope.geojson = {
-          data: data,
-          style: function(d) {
-            return {
-              fillColor: "red",
-              weight: 1,
-              opacity: 1,
-              color: '#666',
-              // dashArray: '3',
-              fillOpacity: geojson_opacity
-            };
-          }
-        };
-      });
+      if (level == 'region')  $scope.geojson = $scope.geojson_region;
+      else                    $scope.geojson = $scope.geojson_depart;
 
       if ($scope.aggregate_data) {
         aggreg_data = aggreg_data.filter(function(d) {
