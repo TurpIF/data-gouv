@@ -110,9 +110,12 @@
         var font_size = d.value / value_max * 42 * 1.6;
 
         var type2color = function(t) {
-          if (t == 'Gendarmerie')       return '#2b468d';
-          if (t == 'Police Municipale') return '#7db7fd';
-          if (t == 'Autre')             return '#304568';
+          if (t == 'Gendarmerie')       return '#d8012a';
+          if (t == 'Police Municipale') return '#00388b';
+          if (t == 'Autre')             return '#30d830';
+          // if (t == 'Gendarmerie')       return '#2b468d';
+          // if (t == 'Police Municipale') return '#7db7fd';
+          // if (t == 'Autre')             return '#304568';
           console.log(t);
           return 'red';
         };
