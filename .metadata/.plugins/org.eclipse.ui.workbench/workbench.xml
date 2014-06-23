@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="27" version="2.0">
+<workbench progressCount="29" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="1024" x="0" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -18,6 +18,8 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
+<part id="2"/>
+<part id="3"/>
 </presentation>
 </folder>
 </info>
@@ -147,6 +149,10 @@
 <editors>
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.knime.workbench.editor.WorkflowEditor" uri="knime://LOCAL/HckInter/workflow.knime"/>
 </editors>
+<item historyLabel="0: HckInter" index="0"/>
+<item historyLabel="0: HckInter" index="0"/>
+<item historyLabel="0: HckInter" index="0"/>
+<item historyLabel="0: HckInter" index="0"/>
 <item historyLabel="0: HckInter" index="0"/>
 <item historyLabel="0: HckInter" index="0"/>
 <item historyLabel="0: HckInter" index="0"/>
