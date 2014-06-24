@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="29" version="2.0">
+<workbench progressCount="32" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="1024" x="0" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -17,9 +17,6 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
-<part id="2"/>
-<part id="3"/>
 </presentation>
 </folder>
 </info>
@@ -39,9 +36,6 @@
 <viewState>
 <content/>
 </viewState>
-</view>
-<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
-<viewState/>
 </view>
 <view id="org.knime.workbench.ui.favorites" partName="Favorite Nodes">
 <viewState/>
@@ -78,9 +72,8 @@
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <view id="org.knime.workbench.explorer.view"/>
 <view id="org.knime.workbench.repository.view.RepositoryView"/>
-<view id="org.eclipse.ui.console.ConsoleView"/>
-<view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="org.knime.workbench.ui.favorites"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
 <fastViewBars/>
 <viewLayoutRec closeable="false" id="org.knime.workbench.repository.view.RepositoryView"/>
 <layout>
@@ -103,11 +96,9 @@
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.3" ratioLeft="303" ratioRight="707" relationship="2" relative="org.eclipse.ui.internal.ViewStack@56946d74"/>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1cb2468a" ratio="0.69905955" ratioLeft="446" ratioRight="192" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@6ce2c7e7" ratio="0.29985857" ratioLeft="212" ratioRight="495" relationship="2" relative="org.eclipse.ui.internal.ViewStack@1cb2468a">

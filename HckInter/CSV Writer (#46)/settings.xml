@@ -36,13 +36,17 @@
 <entry key="gzip" type="xboolean" value="false"/>
 </config>
 <entry key="customDescription" type="xstring" isnull="true" value=""/>
-<entry key="state" type="xstring" value="EXECUTED"/>
+<entry key="state" type="xstring" value="CONFIGURED"/>
+<config key="nodecontainer_message">
+<entry key="type" type="xstring" value="WARNING"/>
+<entry key="message" type="xstring" value="Directory of specified output file doesn't exist and will be created."/>
+</config>
 <entry key="name" type="xstring" value="CSV Writer"/>
-<entry key="hasContent" type="xboolean" value="true"/>
+<entry key="hasContent" type="xboolean" value="false"/>
 <entry key="isInactive" type="xboolean" value="false"/>
 <config key="ports"/>
 <config key="filestores">
 <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-<entry key="file_store_id" type="xstring" value="a216ecb6-b146-4677-bffe-c42e953f8230"/>
+<entry key="file_store_id" type="xstring" isnull="true" value=""/>
 </config>
 </config>

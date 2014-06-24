@@ -2,17 +2,21 @@
 <favoritenodes>
 <personals/>
 <frequents>
+<favorite frequency="1" nodeid="org.knime.base.node.io.filereader.FileReaderNodeFactory"/>
 <favorite frequency="2" nodeid="org.knime.base.node.preproc.filter.column.DataColumnSpecFilterNodeFactory"/>
+<favorite frequency="1" nodeid="org.knime.base.node.preproc.joiner.Joiner2NodeFactory"/>
 <favorite frequency="2" nodeid="org.knime.base.node.preproc.colconvert.numbertostring.NumberToStringNodeFactory"/>
-<favorite frequency="1" nodeid="org.knime.base.node.jsnippet.JavaSnippetNodeFactory"/>
 <favorite frequency="2" nodeid="org.knime.base.node.io.csvwriter.CSVWriterNodeFactory"/>
+<favorite frequency="1" nodeid="org.knime.base.node.jsnippet.JavaSnippetNodeFactory"/>
 <favorite frequency="2" nodeid="org.knime.base.node.preproc.colconvert.stringtonumber.StringToNumberNodeFactory"/>
 </frequents>
 <lastused>
-<favorite nodeid="org.knime.base.node.preproc.filter.column.DataColumnSpecFilterNodeFactory"/>
-<favorite nodeid="org.knime.base.node.jsnippet.JavaSnippetNodeFactory"/>
-<favorite nodeid="org.knime.base.node.io.csvwriter.CSVWriterNodeFactory"/>
-<favorite nodeid="org.knime.base.node.preproc.colconvert.stringtonumber.StringToNumberNodeFactory"/>
+<favorite nodeid="org.knime.base.node.preproc.joiner.Joiner2NodeFactory"/>
+<favorite nodeid="org.knime.base.node.io.filereader.FileReaderNodeFactory"/>
 <favorite nodeid="org.knime.base.node.preproc.colconvert.numbertostring.NumberToStringNodeFactory"/>
+<favorite nodeid="org.knime.base.node.preproc.colconvert.stringtonumber.StringToNumberNodeFactory"/>
+<favorite nodeid="org.knime.base.node.io.csvwriter.CSVWriterNodeFactory"/>
+<favorite nodeid="org.knime.base.node.jsnippet.JavaSnippetNodeFactory"/>
+<favorite nodeid="org.knime.base.node.preproc.filter.column.DataColumnSpecFilterNodeFactory"/>
 </lastused>
 </favoritenodes>

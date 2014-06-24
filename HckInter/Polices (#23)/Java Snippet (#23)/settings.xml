@@ -14,7 +14,7 @@
 <config key="model">
 <entry key="scriptImports" type="xstring" value="// Your custom imports:%%00010"/>
 <entry key="scriptFields" type="xstring" value="// Your custom variables:%%00010"/>
-<entry key="scriptBody" type="xstring" value="// Enter your code here:%%00010out_Type = c_Type.compareTo(&quot;Police Municipale&quot;) == 0 || c_Type.compareTo(&quot;Gendarmerie&quot;) == 0 ? c_Type : &quot;Autre&quot;;%%00010%%00010%%00010%%00010%%00010"/>
+<entry key="scriptBody" type="xstring" value="// Enter your code here:%%00010out_Type = &quot;PN&quot;;%%00010if (c_Type != null)%%00010%%00009out_Type = c_Type.compareTo(&quot;Police Municipale&quot;) == 0 ? &quot;PM&quot; : c_Type.compareTo(&quot;Gendarmerie&quot;) == 0 ? &quot;G&quot; : &quot;PN&quot;;%%00010%%00010%%00010%%00010%%00010"/>
 <config key="jarFiles">
 <entry key="array-size" type="xint" value="0"/>
 </config>
@@ -79,6 +79,6 @@
 </config>
 <config key="filestores">
 <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-<entry key="file_store_id" type="xstring" value="41841af3-1aa2-415d-af22-41a97d6dc228"/>
+<entry key="file_store_id" type="xstring" value="588c4a3d-461e-4083-9876-ffd2c11c2935"/>
 </config>
 </config>
