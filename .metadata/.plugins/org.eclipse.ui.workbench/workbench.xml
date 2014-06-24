@@ -17,11 +17,12 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.knime.workbench.editor.WorkflowEditor" name="workflow.knime" partName="0: HckInter" title="0: HckInter" tooltip="0: HckInter" workbook="DefaultEditorWorkbook">
+<editor id="org.knime.workbench.editor.WorkflowEditor" name="workflow.knime" partName="0: HckInter" title="0: HckInter" tooltip="0: HckInter" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="knime://LOCAL/HckInter/workflow.knime"/>
 </editor>
 </editors>
@@ -136,19 +137,7 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory>
-<editors>
-<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.knime.workbench.editor.WorkflowEditor" uri="knime://LOCAL/HckInter/workflow.knime"/>
-</editors>
-<item historyLabel="0: HckInter" index="0"/>
-<item historyLabel="0: HckInter" index="0"/>
-<item historyLabel="0: HckInter" index="0"/>
-<item historyLabel="0: HckInter" index="0"/>
-<item historyLabel="0: HckInter" index="0"/>
-<item historyLabel="0: HckInter" index="0"/>
-<item historyLabel="0: HckInter" index="0"/>
-<item active="true" historyLabel="0: HckInter" index="0"/>
-</navigationHistory>
+<navigationHistory/>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
